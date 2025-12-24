@@ -1,5 +1,6 @@
 // filepath: script.js
-// ...existing code...
+// ตัวแปรนับจํานวนครั้งที่ทาย
+let attemptCount = 0;
 
 // ฟังก์ชันตรวจสอบการทาย
 function checkGuess() {
@@ -10,7 +11,7 @@ function checkGuess() {
   attemptCount++; // เพิ่มตรงนี้
   if (guessValue === secretNumber) {
     resultContainer.innerHTML = `
- <div class="alert alert-success" role="alert">
+  <div class="alert alert-success" role="alert">
  <h5>✓ ถูกต้อง!</h5>
  <p>คุณทายถูกในครั้งที่ ${attemptCount}</p>
  </div>
@@ -18,6 +19,7 @@ function checkGuess() {
   }
   // ... rest of code ...
 }
+
 // Validation: ตรวจสอบว่าใส่ตัวเลขหรือไม่
 if (isNaN(guessValue) || guessInput.value === "") {
   resultContainer.innerHTML = ` 
@@ -65,10 +67,6 @@ updateDisplay();
 guessInput.value = "";
 guessInput.focus();
 
-// ...existing code...
-// filepath: script.js
-// ...existing code...
-
 // ฟังก์ชันเริ่มเกมใหม่
 function resetGame() {
   initializeGame();
@@ -77,18 +75,11 @@ function resetGame() {
   document.getElementById("guessInput").focus();
 }
 
-// ...existing code...
-// filepath: script.js
-// ตัวแปรนับจํานวนครั้งที่ทาย
-let attemptCount = 0;
 // ฟังก์ชันอัปเดตจํานวนครั้ง
 function updateDisplay() {
   const attemptsContainer = document.getElementById("attemptsContainer");
   attemptsContainer.textContent = `ทายแล้ว: ${attemptCount} ครั้ง`;
 }
-
-// filepath: script.js
-// ...existing code...
 
 // เพิ่มการรองรับ Enter key
 document.addEventListener("DOMContentLoaded", function () {
@@ -100,5 +91,3 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 });
-
-// ...existing code...
