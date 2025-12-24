@@ -86,3 +86,19 @@ function updateDisplay() {
   const attemptsContainer = document.getElementById("attemptsContainer");
   attemptsContainer.textContent = `ทายแล้ว: ${attemptCount} ครั้ง`;
 }
+
+// filepath: script.js
+// ...existing code...
+
+// เพิ่มการรองรับ Enter key
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("guessInput")
+    .addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        checkGuess();
+      }
+    });
+});
+
+// ...existing code...
